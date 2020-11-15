@@ -1,0 +1,25 @@
+
+<div class="main posts-index">
+  <div class="menu-type">
+    <a href="/posts/food/index">
+      Food
+    </a>
+    <p>or</p>
+    <a href="/posts/drink/index">
+      Drink
+    </a>
+  </div>
+  <div class="container">
+    <% @posts.each do |post| %>
+    <a href="<%= "/posts/#{post.id}" %>" >
+      <div class="posts-index-item">
+        <h2><%= post.content %></h2>
+        <img src="<%= "/#{post.image_name}" %>">
+        <p class="price">
+          <%= "#{post.price}円" %>
+        </p>
+      </div>
+    </a>
+    <% end %>
+  </div>
+</div>
